@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8ruGTVLAwxaT5imxouDDyG9thgnJYfK2kt8ee0NWbiGj7l/Ha05AeDLHu5pNbaA8yGXQHVoxipuMbzKNYgvzhw==",
+  "dgSpecHash": "SsLksTybgz4RjeP72l9o2DJLgQbJ3h5LE6byIDESMaorDC+XYK/MDrEwgcpnihcp7b7Y/EH8WhEqjaAHO0co+Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\opilane\\Source\\Repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.csproj",
+  "projectFilePath": "C:\\Users\\opilane\\source\\repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\opilane\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\opilane\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

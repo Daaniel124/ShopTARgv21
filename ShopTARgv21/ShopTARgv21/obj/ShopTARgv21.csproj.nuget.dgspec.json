@@ -1,17 +1,79 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\opilane\\Source\\Repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.csproj": {}
+    "C:\\Users\\opilane\\source\\repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.csproj": {}
   },
   "projects": {
-    "C:\\Users\\opilane\\Source\\Repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.Core\\ShopTARgv21.Core.csproj": {
+    "C:\\Users\\opilane\\source\\repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.ApplicationServices\\ShopTARgv21.ApplicationServices.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\opilane\\Source\\Repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.Core\\ShopTARgv21.Core.csproj",
-        "projectName": "ShopTARgv21.Core",
-        "projectPath": "C:\\Users\\opilane\\Source\\Repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.Core\\ShopTARgv21.Core.csproj",
+        "projectUniqueName": "C:\\Users\\opilane\\source\\repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.ApplicationServices\\ShopTARgv21.ApplicationServices.csproj",
+        "projectName": "ShopTARgv21.ApplicationServices",
+        "projectPath": "C:\\Users\\opilane\\source\\repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.ApplicationServices\\ShopTARgv21.ApplicationServices.csproj",
         "packagesPath": "C:\\Users\\opilane\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\opilane\\Source\\Repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.Core\\obj\\",
+        "outputPath": "C:\\Users\\opilane\\source\\repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.ApplicationServices\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\opilane\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\opilane\\source\\repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.Core\\ShopTARgv21.Core.csproj": {
+                "projectPath": "C:\\Users\\opilane\\source\\repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.Core\\ShopTARgv21.Core.csproj"
+              },
+              "C:\\Users\\opilane\\source\\repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.Data\\ShopTARgv21.Data.csproj": {
+                "projectPath": "C:\\Users\\opilane\\source\\repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.Data\\ShopTARgv21.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\opilane\\source\\repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.Core\\ShopTARgv21.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\opilane\\source\\repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.Core\\ShopTARgv21.Core.csproj",
+        "projectName": "ShopTARgv21.Core",
+        "projectPath": "C:\\Users\\opilane\\source\\repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.Core\\ShopTARgv21.Core.csproj",
+        "packagesPath": "C:\\Users\\opilane\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\opilane\\source\\repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\opilane\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -59,14 +121,14 @@
         }
       }
     },
-    "C:\\Users\\opilane\\Source\\Repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.Data\\ShopTARgv21.Data.csproj": {
+    "C:\\Users\\opilane\\source\\repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.Data\\ShopTARgv21.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\opilane\\Source\\Repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.Data\\ShopTARgv21.Data.csproj",
+        "projectUniqueName": "C:\\Users\\opilane\\source\\repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.Data\\ShopTARgv21.Data.csproj",
         "projectName": "ShopTARgv21.Data",
-        "projectPath": "C:\\Users\\opilane\\Source\\Repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.Data\\ShopTARgv21.Data.csproj",
+        "projectPath": "C:\\Users\\opilane\\source\\repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.Data\\ShopTARgv21.Data.csproj",
         "packagesPath": "C:\\Users\\opilane\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\opilane\\Source\\Repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.Data\\obj\\",
+        "outputPath": "C:\\Users\\opilane\\source\\repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\opilane\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -83,8 +145,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\opilane\\Source\\Repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.Core\\ShopTARgv21.Core.csproj": {
-                "projectPath": "C:\\Users\\opilane\\Source\\Repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.Core\\ShopTARgv21.Core.csproj"
+              "C:\\Users\\opilane\\source\\repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.Core\\ShopTARgv21.Core.csproj": {
+                "projectPath": "C:\\Users\\opilane\\source\\repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.Core\\ShopTARgv21.Core.csproj"
               }
             }
           }
@@ -132,14 +194,14 @@
         }
       }
     },
-    "C:\\Users\\opilane\\Source\\Repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.csproj": {
+    "C:\\Users\\opilane\\source\\repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\opilane\\Source\\Repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.csproj",
+        "projectUniqueName": "C:\\Users\\opilane\\source\\repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.csproj",
         "projectName": "ShopTARgv21",
-        "projectPath": "C:\\Users\\opilane\\Source\\Repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.csproj",
+        "projectPath": "C:\\Users\\opilane\\source\\repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.csproj",
         "packagesPath": "C:\\Users\\opilane\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\opilane\\Source\\Repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21\\obj\\",
+        "outputPath": "C:\\Users\\opilane\\source\\repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\opilane\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -156,8 +218,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\opilane\\Source\\Repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.Data\\ShopTARgv21.Data.csproj": {
-                "projectPath": "C:\\Users\\opilane\\Source\\Repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.Data\\ShopTARgv21.Data.csproj"
+              "C:\\Users\\opilane\\source\\repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.ApplicationServices\\ShopTARgv21.ApplicationServices.csproj": {
+                "projectPath": "C:\\Users\\opilane\\source\\repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.ApplicationServices\\ShopTARgv21.ApplicationServices.csproj"
+              },
+              "C:\\Users\\opilane\\source\\repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.Data\\ShopTARgv21.Data.csproj": {
+                "projectPath": "C:\\Users\\opilane\\source\\repos\\ShopTARgv21\\ShopTARgv21\\ShopTARgv21.Data\\ShopTARgv21.Data.csproj"
               }
             }
           }

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ShopTARgv21.Models.Spaceship.SpaceshipViewModel>
+﻿@model IEnumerable<ShopTARgv21.Models.Spaceship.SpaceshipListViewModel>
 
 <div class="h1">
     Products
@@ -34,10 +34,13 @@
                     <input asp-action="delete" asp-controller="spaceship" asp-route-id="" type="submit" class="btn btn-danger" value="Delete" />
                 </td>
             </tr>*@
-            @foreach(var spaceship in Model)
+            @{
+                int number = 1;
+            }
+            @foreach (var spaceship in Model)
             {
                 <tr>
-                    <th scope="row">1</th>
+                    <th scope="row">@number</th>
                     <td class="">@spaceship.Name</td>
                     <td class="">@spaceship.ModelType</td>
                     <td class="">@spaceship.Passengers</td>
@@ -48,6 +51,7 @@
                     <input asp-action="delete" asp-controller="spaceship" asp-route-id="" type="submit" class="btn btn-danger" value="Delete" />
                 </td>
                 </tr>
+                number++;
             }
             
         </tbody>

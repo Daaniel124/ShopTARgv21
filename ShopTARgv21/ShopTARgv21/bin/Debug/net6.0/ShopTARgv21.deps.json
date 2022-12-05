@@ -11,6 +11,7 @@
           "Microsoft.EntityFrameworkCore": "7.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.0",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.0",
+          "ShopTARgv21.ApplicationServices": "1.0.0",
           "ShopTARgv21.Data": "1.0.0"
         },
         "runtime": {
@@ -700,6 +701,15 @@
           }
         }
       },
+      "ShopTARgv21.ApplicationServices/1.0.0": {
+        "dependencies": {
+          "ShopTARgv21.Core": "1.0.0",
+          "ShopTARgv21.Data": "1.0.0"
+        },
+        "runtime": {
+          "ShopTARgv21.ApplicationServices.dll": {}
+        }
+      },
       "ShopTARgv21.Core/1.0.0": {
         "runtime": {
           "ShopTARgv21.Core.dll": {}
@@ -1199,6 +1209,11 @@
       "sha512": "sha512-c1ho9WU9ZxMZawML+ssPKZfdnrg/OjR3pe0m9v8230z3acqphwvPJqzAkH54xRYm5ntZHGG1EPP3sux9H3qSPg==",
       "path": "system.windows.extensions/5.0.0",
       "hashPath": "system.windows.extensions.5.0.0.nupkg.sha512"
+    },
+    "ShopTARgv21.ApplicationServices/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "ShopTARgv21.Core/1.0.0": {
       "type": "project",
