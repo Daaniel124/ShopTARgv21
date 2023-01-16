@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ShopTARgv21.ApplicationServices.Services
 {
@@ -57,6 +58,19 @@ namespace ShopTARgv21.ApplicationServices.Services
             await _context.SaveChangesAsync();
 
             return imageId;
+        }
+        public async Task<List<FileToDatabase>> RemoveImagesFromDatabase(FileToDatabaseDto[] dto)
+        {
+            foreach (var dtos in dto)
+            {
+                var photoId = await _context.FileToDatabase
+                    .Where(x => x.Id == dtos.Id)
+                    .FirstOrDefaultAsync();
+
+                _context.FileToDatabase.Remove(photoId);
+                await _context.SaveChangesAsync();
+            }
+            return null;
         }
     }
 }
