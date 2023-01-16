@@ -10,13 +10,17 @@ namespace ShopTARgv21.ApplicationServices.Services
     public class SpaceshipServices : ISpaceshipServices
     {
         private readonly ShopDbContext _context;
+        private readonly IFileServices _files;
 
         public SpaceshipServices
             (
-                ShopDbContext context
+                ShopDbContext context,
+                IFileServices files
+
             )
         {
             _context = context;
+            _files = files;
         }
 
         public async Task<Spaceship> Create(SpaceshipDto dto)
@@ -40,7 +44,7 @@ namespace ShopTARgv21.ApplicationServices.Services
 
             if (dto.Files != null)
             {
-                file.ImageData = UploadFile(dto, spaceship);
+                _files.UploadFileToDatabase(dto, spaceship);
             }
 
             await _context.Spaceship.AddAsync(spaceship);
@@ -59,6 +63,7 @@ namespace ShopTARgv21.ApplicationServices.Services
 
         public async Task<Spaceship> Update(SpaceshipDto dto)
         {
+            FileToDatabase file = new FileToDatabase();
 
             var spaceship = new Spaceship()
             {
@@ -76,6 +81,11 @@ namespace ShopTARgv21.ApplicationServices.Services
                 CreatedAt = dto.CreatedAt,
                 ModifiedAt = dto.ModifiedAt
             };
+
+            if (dto.Files != null)
+            {
+                _files.UploadFileToDatabase(dto, spaceship);
+            }
 
             _context.Spaceship.Update(spaceship);
             await _context.SaveChangesAsync();
@@ -118,18 +128,6 @@ namespace ShopTARgv21.ApplicationServices.Services
             }
 
             return null;
-        }
-
-        public async Task<FileToDatabase> RemoveImage(FileToDatabaseDto dto)
-        {
-            var imageId = await _context.FileToDatabase
-                .Where(x => x.Id == dto.Id)
-                .FirstOrDefaultAsync();
-
-            _context.FileToDatabase.Remove(imageId);
-            await _context.SaveChangesAsync();
-
-            return imageId;
         }
     }
 }

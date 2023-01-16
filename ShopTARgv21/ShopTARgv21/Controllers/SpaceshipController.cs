@@ -11,15 +11,18 @@ namespace ShopTARgv21.Controllers
     {
         private readonly ShopDbContext _context;
         private readonly ISpaceshipServices _spaceshipServices;
+        private readonly IFileServices _fileServices;
 
         public SpaceshipController
             (
                 ShopDbContext context,
-                ISpaceshipServices spaceshipServices
+                ISpaceshipServices spaceshipServices,
+                IFileServices fileServices
             )
         {
             _context = context;
             _spaceshipServices = spaceshipServices;
+            _fileServices = fileServices;
         }
 
 
@@ -224,11 +227,11 @@ namespace ShopTARgv21.Controllers
                 Id = file.ImageId
             };
 
-            var image = await _spaceshipServices.RemoveImage(dto);
+            var image = await _fileServices.RemoveImage(dto);
 
             if (image == null)
             {
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("CreateUpdate");
             }
 
             return RedirectToAction(nameof(Index));
