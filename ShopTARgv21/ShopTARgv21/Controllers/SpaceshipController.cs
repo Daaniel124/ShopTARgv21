@@ -185,24 +185,35 @@ namespace ShopTARgv21.Controllers
                 return NotFound();
             }
 
-            var vm = new SpaceshipViewModel()
-            {
-                Id = spaceship.Id,
-                Name = spaceship.Name,
-                ModelType = spaceship.ModelType,
-                SpaceshipBuilder = spaceship.SpaceshipBuilder,
-                PlaceOfBuild = spaceship.PlaceOfBuild,
-                EnginePower = spaceship.EnginePower,
-                LiftUpToSpaceByTonn = spaceship.LiftUpToSpaceByTonn,
-                Crew = spaceship.Crew,
-                Passengers = spaceship.Passengers,
-                LaunchDate = spaceship.LaunchDate,
-                BuildOfDate = spaceship.BuildOfDate,
-                CreatedAt = spaceship.CreatedAt,
-                ModifiedAt = spaceship.ModifiedAt,
-            };
+            var photos = await _context.FileToDatabase
+                .Where(x => x.SpaceshipId == id)
+                .Select(y => new ImageViewModel
+                {
+                    ImageData = y.ImageData,
+                    ImageId = y.Id,
+                    Image = string.Format("data:image/gif;base64,{0}", Convert.ToBase64String(y.ImageData)),
+                    ImageTitle = y.ImageTitle,
+                    SpaceshipId = y.Id
+                }).ToArrayAsync();
 
-            return View(vm);
+            var vm = new SpaceshipViewModel();
+
+            vm.Id = spaceship.Id;
+            vm.Name = spaceship.Name;
+            vm.ModelType = spaceship.ModelType;
+            vm.SpaceshipBuilder = spaceship.SpaceshipBuilder;
+            vm.PlaceOfBuild = spaceship.PlaceOfBuild;
+            vm.EnginePower = spaceship.EnginePower;
+            vm.LiftUpToSpaceByTonn = spaceship.LiftUpToSpaceByTonn;
+            vm.Crew = spaceship.Crew;
+            vm.Passengers = spaceship.Passengers;
+            vm.LaunchDate = spaceship.LaunchDate;
+            vm.BuildOfDate = spaceship.BuildOfDate;
+            vm.CreatedAt = spaceship.CreatedAt;
+            vm.ModifiedAt = spaceship.ModifiedAt;
+            vm.Image.AddRange(photos);
+
+            return View("Delete", vm);
         }
 
 

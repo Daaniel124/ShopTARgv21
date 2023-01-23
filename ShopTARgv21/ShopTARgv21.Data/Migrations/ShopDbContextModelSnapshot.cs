@@ -41,7 +41,7 @@ namespace ShopTARgv21.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("FileToDatabase");
+                    b.ToTable("FileToDatabase", (string)null);
                 });
 
             modelBuilder.Entity("ShopTARgv21.Core.Domain.Spaceship", b =>
@@ -93,7 +93,7 @@ namespace ShopTARgv21.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Spaceship");
+                    b.ToTable("Spaceship", (string)null);
                 });
 #pragma warning restore 612, 618
         }
