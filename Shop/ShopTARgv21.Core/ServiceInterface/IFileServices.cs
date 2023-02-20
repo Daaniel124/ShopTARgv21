@@ -11,5 +11,7 @@ namespace ShopTARgv21.Core.ServiceInterface
 
         Task<List<FileToDatabase>> RemoveImagesFromDatabase(FileToDatabaseDto[] dto);
         void UploadFileToApi(RealEstateDto dto, RealEstate domain);
+        Task<FileToApi> RemoveImageFromApi(FileToApiDto dto);
+        Task<List<FileToApi>> RemoveImagesFromApi(FileToApiDto[] dtos);
     }
 }
