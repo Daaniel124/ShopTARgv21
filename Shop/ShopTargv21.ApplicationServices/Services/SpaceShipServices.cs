@@ -46,10 +46,10 @@ namespace ShopTARgv21.ApplicationServices.Services
             spaceship.CreatedAt = dto.CreatedAt;
             spaceship.ModifiedAt = dto.ModifiedAt;
 
-            if (dto.Files != null)
-            {
-                _files.UploadFileToDatabase(dto, spaceship);
-            }
+            //if (dto.Files != null)
+            //{
+            //    file.ImageData = _files.UploadFileToDatabase(dto, spaceship);
+            //}
 
             await _context.Spaceship.AddAsync(spaceship);
             await _context.SaveChangesAsync();
@@ -101,7 +101,7 @@ namespace ShopTARgv21.ApplicationServices.Services
         public async Task<Spaceship> Delete(Guid id)
         {
             var spaceshipId= await _context.Spaceship
-              .Include(x => x.FileToDatabases)
+              //.Include(x => x.FileToDatabases)
               .FirstOrDefaultAsync(x => x.Id == id);
 
             var photos = await _context.FileToDatabase

@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
-using Shop.Models.Car;
 using Shop.Models.RealEstate;
 using Shop.Models.Spaceship;
 using ShopTARgv21.ApplicationServices.Services;
