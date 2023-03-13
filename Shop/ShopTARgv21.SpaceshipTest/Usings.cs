@@ -9,3 +9,5 @@ global using Microsoft.EntityFrameworkCore.Diagnostics;
 global using ShopTARgv21.SpaceshipTest.Macros;
 global using ShopTARgv21.Core.Dto;
 global using Microsoft.AspNetCore.Http;
+global using Microsoft.Extensions.Hosting;
+global using System.Collections;

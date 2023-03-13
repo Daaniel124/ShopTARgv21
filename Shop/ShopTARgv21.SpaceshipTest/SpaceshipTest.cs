@@ -1,3 +1,7 @@
+
+
+using Microsoft.AspNetCore.Mvc;
+
 namespace ShopTARgv21.SpaceshipTest
 {
     public class SpaceshipTest : TestBase
@@ -26,6 +30,47 @@ namespace ShopTARgv21.SpaceshipTest
             var result = await Svc<ISpaceShipServices>().Create(spaceship);
 
             Assert.NotNull(result);
+        }
+
+        [Fact]
+        public async Task ShouldNot_GetByIdSpaceShip_WhenReturnsResultAsync()
+        {
+            Guid guid = Guid.Parse("9307f724-4639-4a70-844d-9a5254da4cad");
+
+            Guid guid1 = Guid.Parse(Guid.NewGuid().ToString());
+
+            await Svc<ISpaceShipServices>().GetAsync(guid);
+            Assert.NotEqual(guid1, guid);
+        }
+
+        [Fact]
+        public async Task Should_GetByIdSpaceShip_WhenReturnsEqual()
+        {
+            Guid guid = Guid.Parse("9307f724-4639-4a70-844d-9a5254da4cad");
+
+            Guid guid1 = Guid.Parse("9307f724-4639-4a70-844d-9a5254da4cad");
+
+            await Svc<ISpaceShipServices>().GetAsync(guid);
+
+            Assert.Equal(guid1, guid);
+        }
+
+        [Fact]
+        public async Task Should_DeleteByIdSpaceship_WhenDeleteSpaceship()
+        {
+            //Arrange
+            Guid guid = Guid.Parse("9307f724-4639-4a70-844d-9a5254da4cad");
+            Guid guid1 = Guid.Parse("9307f724-4639-4a70-844d-9a5254da4cad");
+
+
+            //Act
+            var result = await Svc<ISpaceShipServices>().Delete(guid);
+
+
+            //Assert
+            var serviceActionResult = Assert.IsType<RedirectToActionResult>(result);
+            Assert.Null(serviceActionResult.ControllerName);
+            Assert.Equal("Read", serviceActionResult.ActionName);
         }
     }
 }

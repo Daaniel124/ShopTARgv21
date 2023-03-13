@@ -7,6 +7,7 @@
         protected TestBase ()
         {
             var services = new ServiceCollection();
+
             SetupServices(services);
             serviceProvider = services.BuildServiceProvider();
         }
@@ -14,6 +15,8 @@
         public virtual void SetupServices(IServiceCollection services) 
         {
             services.AddScoped<ISpaceShipServices, SpaceShipServices>();
+            services.AddScoped<IFileServices, FileServices>();
+            services.AddScoped<IHostEnvironment, MockWebHostingEnv>();
 
             services.AddDbContext<ShopDbContext>(x =>
             {
