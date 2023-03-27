@@ -1,9 +1,3 @@
-
-
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Xml.Linq;
-
 namespace ShopTARgv21.SpaceshipTest
 {
     public class SpaceshipTest : TestBase
@@ -109,37 +103,43 @@ namespace ShopTARgv21.SpaceshipTest
         }
 
         [Fact]
-        public async Task ShoulUpdate_ValidSpaceship_WhenBeUpdated()
+        public async Task ShoulUpdate_Spaceship_WhenUpdatedData()
         {
             SpaceshipDto spaceship = CreateValidSpaceship();
-            await Svc<ISpaceShipServices>().Create(spaceship);
-            SpaceshipDto updateSpaceship = UpdateValidSpaceship(spaceship);
+            var create = await Svc<ISpaceShipServices>().Create(spaceship);
 
-            var result = await Svc<ISpaceShipServices>().Update(updateSpaceship);
+            SpaceshipDto updateSpaceship = UpdateValidSpaceship();
+            var update = await Svc<ISpaceShipServices>().Update(updateSpaceship);
 
-            Assert.NotEqual(updateSpaceship.Name, result.Name);
-            Assert.NotEqual(updateSpaceship.ModelType, result.ModelType);
-            Assert.NotEqual(updateSpaceship.SpaceshipBuilder, result.SpaceshipBuilder);
-            Assert.NotEqual(updateSpaceship.PlaceOfBuild, result.PlaceOfBuild);
-            Assert.NotEqual(updateSpaceship.EnginePower, result.EnginePower);
-            Assert.NotEqual(updateSpaceship.LiftUpToSpaceByTonn, result.LiftUpToSpaceByTonn);
-            Assert.NotEqual(updateSpaceship.Crew, result.Crew);
-            Assert.NotEqual(updateSpaceship.Passengers, result.Passengers);
-            Assert.NotEqual(updateSpaceship.LaunchDate, result.LaunchDate);
-            Assert.NotEqual(updateSpaceship.BuildOfDate, result.BuildOfDate);
-            Assert.NotEqual(updateSpaceship.CreatedAt, result.CreatedAt);
-            Assert.NotEqual(updateSpaceship.ModifiedAt, result.ModifiedAt);
+            Assert.Equal(update.Name, create.Name);
+            Assert.Equal(update.ModelType, create.ModelType);
+            Assert.Equal(update.SpaceshipBuilder, create.SpaceshipBuilder);
+            Assert.Equal(update.PlaceOfBuild, create.PlaceOfBuild);
+            Assert.Equal(update.EnginePower, create.EnginePower);
+            Assert.Equal(update.LiftUpToSpaceByTonn, create.LiftUpToSpaceByTonn);
+            Assert.Equal(update.Crew, create.Crew);
+            Assert.Equal(update.Passengers, create.Passengers);
 
+            Assert.NotEqual(update.CreatedAt, create.CreatedAt);
+            Assert.NotEqual(update.ModifiedAt, create.ModifiedAt);
+        }
 
-            /*Assert.Equal(updateSpaceship.CreatedAt, result.CreatedAt);
-            Assert.True(updateSpaceship.ModifiedAt < result.ModifiedAt);*/
+        [Fact]
+        public async Task ShouldNot_UpdateSpaceship_WhenNotUpdateData()
+        {
+            SpaceshipDto spaceship = CreateValidSpaceship();
+            var create = await Svc<ISpaceShipServices>().Create(spaceship);
+
+            SpaceshipDto nullUpdate = NullSpaceship();
+            var update = await Svc<ISpaceShipServices>().Update(nullUpdate);
+            Assert.NotNull(update.Id);
+            Assert.NotNull(update.Name);
         }
 
         private SpaceshipDto CreateValidSpaceship()
         {
             SpaceshipDto spaceship = new()
             {
-                Id = Guid.NewGuid(),
                 Name = "asd",
                 ModelType = "test",
                 SpaceshipBuilder = "nasa",
@@ -156,22 +156,44 @@ namespace ShopTARgv21.SpaceshipTest
             return spaceship;
         }
 
-        private SpaceshipDto UpdateValidSpaceship(SpaceshipDto spaceship)
+        private SpaceshipDto UpdateValidSpaceship()
         {
-            spaceship.Id = Guid.NewGuid();
-            spaceship.Name = "asd";
-            spaceship.ModelType = "test";
-            spaceship.SpaceshipBuilder = "nasa";
-            spaceship.PlaceOfBuild = "test";
-            spaceship.EnginePower = 45;
-            spaceship.LiftUpToSpaceByTonn = 4;
-            spaceship.Crew = 4;
-            spaceship.Passengers = "5";
-            spaceship.LaunchDate = DateTime.Now;
-            spaceship.BuildOfDate = DateTime.Now;
-            spaceship.CreatedAt = DateTime.Now;
-            spaceship.ModifiedAt = DateTime.Now;
+            SpaceshipDto spaceship = new()
+            {
+                Name = "asd",
+                ModelType = "test",
+                SpaceshipBuilder = "nasa",
+                PlaceOfBuild = "test",
+                EnginePower = 45,
+                LiftUpToSpaceByTonn = 4,
+                Crew = 4,
+                Passengers = "5",
+                LaunchDate = DateTime.Now,
+                BuildOfDate = DateTime.Now,
+                CreatedAt = DateTime.Now,
+                ModifiedAt = DateTime.Now
+            };
+            return spaceship; 
+        }
 
+        private SpaceshipDto NullSpaceship()
+        {
+            SpaceshipDto spaceship = new()
+            {
+                Id = null,
+                Name = "asd",
+                ModelType = "test",
+                SpaceshipBuilder = "nasa",
+                PlaceOfBuild = "test",
+                EnginePower = 45,
+                LiftUpToSpaceByTonn = 4,
+                Crew = 4,
+                Passengers = "5",
+                LaunchDate = DateTime.Now,
+                BuildOfDate = DateTime.Now,
+                CreatedAt = DateTime.Now,
+                ModifiedAt = DateTime.Now
+            };
             return spaceship;
         }
     }
